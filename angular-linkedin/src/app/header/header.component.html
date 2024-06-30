@@ -1,0 +1,32 @@
+<!-- Header -->
+<header id="header">
+    <div class="logo">
+        <span class="icon fa-smile-wink"></span>
+    </div>
+    <div class="content">
+        <div class="inner">
+            <h1>Dear Guests, Welcome!</h1>
+            <p>You have arrived at my personal page. Have a browse and reach out if you would like to connect.</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/intro" (click)="toggleComponent('Intro')" (click)="activateArticle(0)">Intro</a></li>
+            <li><a href="/portfolio" (click)="toggleComponent('Portfolio')" (click)="activateArticle(1)">Projects</a></li>
+            <li><a href="/work" (click)="toggleComponent('Work')" (click)="activateArticle(2)">Work</a></li>
+            <li><a href="/contact" (click)="toggleComponent('Contact')" (click)="activateArticle(3)">Contact</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- <nav>
+        <ul>
+            <li *ngFor="let link of links" [class.active]="link.active">
+                <a href="{{ link.path }}" (click)="toggleLink(link)">{{ link.name }}</a>
+            </li>
+
+        </ul>
+    </nav> -->
+    
+</header>
+
