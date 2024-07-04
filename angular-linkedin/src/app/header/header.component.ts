@@ -1,9 +1,7 @@
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { DataService } from '../data.service';
-import { ArticleService } from '../article.service';
-
 
 @Component({
   selector: 'app-header',
@@ -14,15 +12,18 @@ import { ArticleService } from '../article.service';
 })
 export class HeaderComponent {
 
-  constructor(private dataService: DataService, private articleService: ArticleService) { }
+  constructor(private dataService: DataService, private router: Router, private renderer: Renderer2) { }
 
-  toggleComponent(component:string) {
+  isPlainRoute(): boolean {
+    return this.router.url === '/';
+  }
+
+  toggleComponent(component:string, event: Event) {
+    event.preventDefault();
+    this.router.navigate(['/' + component]);
     this.dataService.setActiveComponent(component);
   }
 
-  activateArticle(index: number): void {
-    this.articleService.setActiveArticleIndex(index);
-  }
-
+  
 
 }

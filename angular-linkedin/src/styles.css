@@ -95,9 +95,9 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	body {
+	/* body {
 		background: #1b1f22;
-	}
+	} */
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -1534,7 +1534,7 @@ input, select, textarea {
 		z-index: 3;
 	}
 
-		#main article {
+		article {
 			-moz-transform: translateY(0.25rem);
 			-webkit-transform: translateY(0.25rem);
 			-ms-transform: translateY(0.25rem);
@@ -1552,7 +1552,7 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-			#main article.active {
+			article.active {
 				-moz-transform: translateY(0);
 				-webkit-transform: translateY(0);
 				-ms-transform: translateY(0);
@@ -1560,7 +1560,7 @@ input, select, textarea {
 				opacity: 1;
 			}
 
-			#main article .close {
+			article .close {
 				display: block;
 				position: absolute;
 				top: 0;
@@ -1573,7 +1573,7 @@ input, select, textarea {
 				white-space: nowrap;
 			}
 
-				#main article .close:before {
+				article .close:before {
 					-moz-transition: background-color 0.2s ease-in-out;
 					-webkit-transition: background-color 0.2s ease-in-out;
 					-ms-transition: background-color 0.2s ease-in-out;
@@ -1592,11 +1592,11 @@ input, select, textarea {
 					background-repeat: no-repeat;
 				}
 
-				#main article .close:hover:before {
+				article .close:hover:before {
 					background-color: rgba(255, 255, 255, 0.075);
 				}
 
-				#main article .close:active:before {
+				article .close:active:before {
 					background-color: rgba(255, 255, 255, 0.175);
 				}
 

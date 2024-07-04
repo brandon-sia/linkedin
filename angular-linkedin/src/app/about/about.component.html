@@ -1,8 +1,8 @@
 <!-- Intro -->
-<article id="About" [class.active]="isActive">
+<article id="About" [class.active]="isActive" (click)="onArticleClick($event)">
     <h2 class="major">Intro</h2>
     <span class="image main"><img src="/images/intro_img.jpg" alt="" /></span>
-    <p>Hey! I'm your friendly technology accountant. I love experimenting with anything tech related and this has lead to my current career in automation for accounting. Check out my <a href="#work">work</a>.</p>
+    <p>Hey! I'm your friendly technology accountant. I love experimenting with anything tech related and this has lead to my current career in automation for accounting.</p>
     <p>Since young, I like the idea of pursing knowledge. Businesses, science, art or history, the genre doesn't really matter. There is always something to learn every day and I have committed myself to a lifelong journey of trying new things and having an open mind.</p>
-    <div class="close" (click)="close()">Close</div>
+    <div class="close" (click)="closeArticle($event)">Close</div>
 </article>

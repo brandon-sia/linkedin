@@ -1,10 +1,10 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Renderer2, Inject } from '@angular/core';
 import { DataService } from '../data.service';
 import { HeaderComponent } from '../header/header.component';
-import { ArticleService } from '../article.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -16,32 +16,24 @@ import { Subscription } from 'rxjs';
 export class AboutComponent {
 
   @Input() index!: number;
-  isActive : boolean = false
-  private subscription!: Subscription;
+  @Input() isActive: boolean = false;
 
-
-  constructor(private dataService: DataService, private articleService: ArticleService) { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
     this.dataService.currentComponent.subscribe(activeComponent => {
-      if (!this.isActive) {
-        this.isActive = (activeComponent === 'Intro');
-      }
-    });
-
-    this.isActive = this.articleService.getActiveArticleIndex() === this.index;
-    this.subscription = this.articleService.activeArticleIndexChange.subscribe((index: number) => {
-      this.isActive = this.index === index;
+      this.isActive = (activeComponent === 'intro');
     });
 
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+  closeArticle(event: Event): void {
+    event.stopPropagation(); // Prevent event from bubbling up
+    this.router.navigate(['/']); // Redirect to home or another route
   }
 
-  close(){
-    location.hash = ''
+  onArticleClick(event: Event): void {
+    event.stopPropagation(); // Prevent event from bubbling up
   }
 
   // implementation for view
