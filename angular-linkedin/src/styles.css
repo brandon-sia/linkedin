@@ -1552,7 +1552,7 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-			article.active {
+			article {
 				-moz-transform: translateY(0);
 				-webkit-transform: translateY(0);
 				-ms-transform: translateY(0);

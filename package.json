@@ -2,6 +2,10 @@
   "dependencies": {
     "@floating-ui/dom": "^1.6.6",
     "bootstrap": "^5.3.3",
-    "firebase": "^10.12.2"
+    "firebase": "^10.12.2",
+    "firebaseui": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10"
   }
 }

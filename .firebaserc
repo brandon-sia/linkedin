@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "website-deployment-b671b"
-  }
+    "default": "brandon-sia",
+    "prod": "brandon-sia"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
