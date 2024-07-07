@@ -11,11 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Angular CLI
-        run: npm install -g @angular/cli
+        run: |
+        cd angular-linkedin
+        npm install -g @angular/cli
       - name: Install dependencies
-        run: npm install
+        run: |
+        cd angular-linkedin
+        npm install
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build
+      - run: |
+        cd angular-linkedin
+        npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
