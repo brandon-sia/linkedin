@@ -1,4 +1,15 @@
 <body>
+  <nav *ngIf="isPlainRoute()">
+    <div>
+      <h2 *ngIf="isLoginSuccess">Hello {{userEmail}}!</h2>
+    </div>
+    <div>
+      <a href="/login" class="fas fa-sign-in-alt" *ngIf="!isLoginSuccess"> Login</a>
+    </div>
+    <div>
+      <a href="/sign-up" class="fas fa-solid fa-user-plus" *ngIf="!isLoginSuccess"> Sign Up</a>
+    </div>
+  </nav>
   <app-header></app-header>
   <div class="main">
     <router-outlet></router-outlet>

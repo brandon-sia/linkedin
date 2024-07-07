@@ -1,14 +1,14 @@
 <article>
     <div class="login-container">
         <h2>Login</h2>
-        <form>
+        <form (ngSubmit)="logIn()">
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input [(ngModel)]="email" type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input [(ngModel)]="password" type="password" id="password" name="password" required>
         </div>
         <br>
         <div>
@@ -17,4 +17,12 @@
         </form>
         <div class="close" (click)="closeArticle($event)"></div>
     </div>
+
+    <div *ngIf="isLoginSuccess" class="success-message">
+        You are now logged in!
+    </div>
+    <div *ngIf="isLoginFailed" class="fail-message">
+        Your login has failed.
+    </div>
+
 </article>

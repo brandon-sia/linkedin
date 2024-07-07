@@ -1,14 +1,6 @@
 
 <!-- Contact -->
 <article id="contact" [class.active]="isActive">
-
-    <nav>
-        <ul>
-          <li><a href="/login">Login to send a message</a></li>
-          <li><a href="/sign-up">Sign Up to send a message</a></li>
-        </ul>
-    </nav>
-
     <h2 class="major">Contact</h2>
     <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
         <div class="fields">
@@ -30,6 +22,14 @@
           <li><button type="reset">Reset</button></li>
         </ul>
       </form>
+
+      <div *ngIf="isMessageSent" class="success-message">
+        Your message has been sent successfully!
+      </div>
+
+      <div *ngIf="isMessageFail" class="fail-message">
+        Your message could not be sent, please log in before sending!
+      </div>
 
     <ul class="icons">
         <li><a href="https://github.com/brandon-sia?tab=repositories" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">GitHub</span></a></li>

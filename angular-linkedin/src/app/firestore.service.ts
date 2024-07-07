@@ -11,6 +11,7 @@ import { getAuth } from "firebase/auth";
 export class FirestoreService {
 
   db:any
+  auth:any
 
   constructor() { 
 
@@ -18,10 +19,11 @@ export class FirestoreService {
     const app = initializeApp(environment.firebaseConfig);
 
     // Initialize Firebase Authentication and get a reference to the service
-    const auth = getAuth(app);
+    this.auth = getAuth(app);
 
     // Initialize Cloud Firestore and get a reference to the service
     this.db = getFirestore(app);
+
 
   }
 

@@ -17,6 +17,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class ContactComponent {
 
   isActive : boolean = false;
+  isMessageSent: boolean = false;
+  isMessageFail = false;
 
   constructor(private dataService: DataService, private router: Router, private firestoreService: FirestoreService) { 
 
@@ -42,17 +44,32 @@ export class ContactComponent {
   async onSubmit(form: NgForm): Promise<void> {
     const { name, email, message } = form.value;
 
-    await addDoc(collection(this.firestoreService.db, "users"), {
-      name: name,
-      email: email,
-      message: message
-    }).then(() => {
-      console.log('Message sent successfully!');
-      // Optionally, reset the form
-    }).catch(error => {
-      console.error('Error sending message:', error);
-    });
+    if (form.valid) 
+      {
+        await addDoc(collection(this.firestoreService.db, "users"), {
+          name: name,
+          email: email,
+          message: message
+        }).then(() => {
+          this.isMessageSent = true;
+          this.isMessageFail = false;
+          console.log('Message sent successfully!');
+          form.resetForm();
+        }).catch(error => {
+          this.isMessageFail = true;
+          this.isMessageSent = false;
+          console.error('Error sending message:', error);
+        });
+      }
   }
+
+  toggleComponent(component:string, event: Event) {
+    event.preventDefault();
+    this.router.navigate(['/' + component]);
+    console.log(component)
+    this.dataService.setActiveComponent(component);
+  }
+
 
 
 }
