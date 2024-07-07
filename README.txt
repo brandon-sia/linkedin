@@ -1,30 +1,18 @@
-Dimension by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Welcome to My Personal Page
+Hi there! I'm a technology accountant with a passion for blending the worlds of finance and technology. I specialize in automation for accounting, but my interests span a wide range of fields, including business, science, art, and history. Lifelong learning and trying new things are at the core of my approach to both work and life.
 
+About Me
+Profession: Technology Accountant
+Specialization: Automation for Accounting
+Passions: Tech-related activities, business, science, art, history
+Beliefs: Lifelong learning, open-mindedness, and constant exploration
+Projects
+I enjoy experimenting with various tech projects and sharing my work on GitHub. Feel free to explore my repositories and see what I've been up to.
 
-This is Dimension, a fun little one-pager with modal-ized (is that a word?) "pages"
-and a cool depth effect (click on a menu item to see what I mean). Simple, fully
-responsive, and kitted out with all the usual pre-styled elements you'd expect.
-Hope you dig it :)
+Get in Touch
+I'm always open to interesting ideas and collaborations. If you have a project you'd like to discuss or just want to chat about tech and automation, don't hesitate to reach out.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+GitHub: [Your GitHub Profile Link]
+LinkedIn: [Your LinkedIn Profile Link]
+Email: [Your Email Address]
+Let's connect and create something amazing together
