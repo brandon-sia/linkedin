@@ -12,7 +12,5 @@ I enjoy experimenting with various tech projects and sharing my work on GitHub. 
 Get in Touch
 I'm always open to interesting ideas and collaborations. If you have a project you'd like to discuss or just want to chat about tech and automation, don't hesitate to reach out.
 
-GitHub: [Your GitHub Profile Link]
-LinkedIn: [Your LinkedIn Profile Link]
-Email: [Your Email Address]
+LinkedIn: https://www.linkedin.com/in/brandonsia/
 Let's connect and create something amazing together
