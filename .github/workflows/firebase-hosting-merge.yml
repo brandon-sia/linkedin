@@ -9,16 +9,15 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: angular-linkedin
     steps:
       - name: Install Angular CLI
-        working-directory: angular-linkedin
         run: npm install -g @angular/cli
-        
       - name: Install dependencies
-        working-directory: angular-linkedin
         run: npm install
       - uses: actions/checkout@v4
-        working-directory: angular-linkedin
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
