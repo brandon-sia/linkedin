@@ -2,20 +2,18 @@
   "dependencies": {
     "@floating-ui/dom": "^1.6.6",
     "bootstrap": "^5.3.3",
-    "firebase": "^10.12.2",
+    "firebase": "^10.12.3",
     "firebaseui": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.10"
   },
   "scripts": {
-  "ng": "ng",
-  "start": "ng serve",
-  "build": "ng build --prod",
-  "test": "ng test",
-  "lint": "ng lint",
-  "e2e": "ng e2e"
-}
-
-
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  }
 }

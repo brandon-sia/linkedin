@@ -1,7 +1,11 @@
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { DataService } from '../data.service';
+import { GoogleAuthProvider, UserCredential } from "firebase/auth";
+import { FirestoreService } from '../firestore.service';
+import { FirebaseError } from 'firebase/app';
+
 
 @Component({
   selector: 'app-header',
@@ -12,7 +16,12 @@ import { DataService } from '../data.service';
 })
 export class HeaderComponent {
 
-  constructor(private dataService: DataService, private router: Router, private renderer: Renderer2) { }
+  auth: any;
+
+  constructor(private dataService: DataService, private router: Router, private firestoreService: FirestoreService) 
+  {
+    this.auth = firestoreService.auth;
+  }
 
   isPlainRoute(): boolean {
     return this.router.url === '/';

@@ -53,12 +53,10 @@ export class ContactComponent {
         }).then(() => {
           this.isMessageSent = true;
           this.isMessageFail = false;
-          console.log('Message sent successfully!');
           form.resetForm();
         }).catch(error => {
           this.isMessageFail = true;
           this.isMessageSent = false;
-          console.error('Error sending message:', error);
         });
       }
   }
