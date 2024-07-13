@@ -1,12 +1,14 @@
 <body>
   <nav *ngIf="isPlainRoute()">
     <div *ngIf="isUser(); else noUser">
-      <h1>Welcome, {{ user.displayName }}</h1>
-      <img [src]="user.photoURL" alt="User photo">
+      <div>
+        <h1>Welcome, {{ user.displayName }}</h1>
+        <img [src]="user.photoURL" alt="User photo">
+      </div>
       <button (click)="googleSignOut()">Logout</button>
     </div>
     <ng-template #noUser>
-      <button *ngIf="!isUser()" (click)="googleLogIn()">Sign in with Google</button>
+      <button *ngIf="!isUser()" (click)="googleSignIn()">Sign in with Google</button>
     </ng-template>
 
   </nav>

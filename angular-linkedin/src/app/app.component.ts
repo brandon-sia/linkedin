@@ -40,7 +40,7 @@ export class AppComponent{
     return this.user != '';
   }
   
-  googleLogIn(): Promise<void>{
+  googleSignIn(): Promise<void>{
 
     return signInWithPopup(this.auth, provider)
       .then((result) => {
@@ -67,6 +67,7 @@ export class AppComponent{
   googleSignOut(): Promise<void>{
 
     return signOut(this.auth).then(() => {
+      this.user = ''
       // Sign-out successful.
     }).catch((error) => {
       // An error happened.
