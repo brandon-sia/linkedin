@@ -1,16 +1,16 @@
 
 <!-- Contact -->
-<article id="contact" [class.active]="isActive">
+<article id="contact" [class.active]="isActive" *ngIf="this.user; else noUser">
     <h2 class="major">Contact</h2>
     <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
         <div class="fields">
           <div class="field half">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" ngModel required />
+            <input type="text" name="name" id="name" ngModel required [(ngModel)]="this.user.displayName" />
           </div>
           <div class="field half">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" ngModel required />
+            <input type="email" name="email" id="email" ngModel required [(ngModel)]="this.user.email" />
           </div>
           <div class="field">
             <label for="message">Message</label>
@@ -37,3 +37,11 @@
     </ul>
     <div class="close" (click)="closeArticle($event)"></div>
 </article>
+
+
+  <ng-template #noUser>
+    <article class="before-contact">
+        Please sign in first before contacting! <i class="far fa-smile-beam"></i>
+      <div class="close" (click)="closeArticle($event)"></div>
+    </article>
+  </ng-template >

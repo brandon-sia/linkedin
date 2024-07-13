@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { collection, addDoc } from "firebase/firestore"; 
 import { FirestoreService } from '../firestore.service';
 import { FormsModule, NgForm } from '@angular/forms';
-
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-contact',
@@ -19,9 +19,11 @@ export class ContactComponent {
   isActive : boolean = false;
   isMessageSent: boolean = false;
   isMessageFail = false;
+  user : any = false;
 
-  constructor(private dataService: DataService, private router: Router, private firestoreService: FirestoreService) { 
+  constructor(private dataService: DataService, private router: Router, private firestoreService: FirestoreService, private appComponent: AppComponent ) { 
 
+    this.user = appComponent.user;
   }
 
   ngOnInit() {
@@ -64,7 +66,6 @@ export class ContactComponent {
   toggleComponent(component:string, event: Event) {
     event.preventDefault();
     this.router.navigate(['/' + component]);
-    console.log(component)
     this.dataService.setActiveComponent(component);
   }
 
